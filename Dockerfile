@@ -4,7 +4,9 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update
 RUN apt-get install -y -qq python3-dev build-essential
+RUN mkdir /app
 
 FROM build
 
 RUN pip install --upgrade pip setuptools pip-tools
+WORKDIR /app
