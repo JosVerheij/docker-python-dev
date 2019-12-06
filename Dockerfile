@@ -3,8 +3,7 @@ FROM python:3.8-slim-buster AS build
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update
-RUN apt-get install -y -qq python3-dev build-essential
-RUN mkdir /app
+RUN apt-get install -y -qq python3-dev libpq-dev build-essential
 
 FROM build
 
